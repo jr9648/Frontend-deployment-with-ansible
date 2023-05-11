@@ -1,0 +1,32 @@
+---
+- name: deploying site
+  hosts: angular
+  become: yes
+  tasks:
+    - name: frontend
+      include_role:
+        name: frontend
+
+- name: deploying site1
+  hosts: 192.168.1.80
+  become: yes
+  tasks:
+    - name: site1
+      include_role:
+        name: site1
+
+- name: deploying site2
+  hosts: 192.168.1.81
+  become: yes
+  tasks:
+    - name: site2
+      include_role:
+        name: site2
+
+- name: Installing and configuring haproxy
+  become: yes
+  hosts: 192.168.1.87
+  tasks:
+    - name: haproxy
+      include_role:
+        name: haproxy

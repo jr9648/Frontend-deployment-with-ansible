@@ -1,0 +1,8 @@
+---
+- name: Configure angular LXCs
+  hosts: angular
+  become: yes
+  tasks:
+    - name: angular
+      include_role:
+        name: angular

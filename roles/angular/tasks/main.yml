@@ -1,0 +1,17 @@
+- name: apt update
+  shell: apt update -y
+
+- name: installing git
+  shell: apt install git -y
+
+- name: installing curl
+  shell: apt install curl -y
+
+- name: adding repo
+  shell: curl -fsSL https://deb.nodesource.com/setup_18.x | bash - 
+
+- name: installing nodejs
+  shell: apt-get install -y nodejs
+
+- name: installing angular_cli
+  shell: npm install -g @angular/cli
